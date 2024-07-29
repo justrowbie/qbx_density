@@ -34,10 +34,12 @@ exports('SetDensity', setDensity)
 
 CreateThread(function()
     while true do
-        if density.disableall then
+        if density.disableallvehicle then
             SetVehiclePopulationBudget(0)
-            SetPedPopulationBudget(0)
             SetNumberOfParkedVehicles(0)
+        end
+        if density.disableallped then
+            SetPedPopulationBudget(0)
         end
         SetParkedVehicleDensityMultiplierThisFrame(density.parked)
         SetVehicleDensityMultiplierThisFrame(density.vehicle)
